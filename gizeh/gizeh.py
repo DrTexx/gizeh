@@ -323,7 +323,7 @@ class ImagePattern(Element):
         if pixel_zero is None:
             pixel_zero = [0, 0]
         if isinstance(image, Surface):
-            self._cairo_surface = image
+            self._cairo_surface = image._cairo_surface
         else:
             self._cairo_surface = Surface.from_image(image)._cairo_surface
         self.matrix = translation_matrix(pixel_zero)
